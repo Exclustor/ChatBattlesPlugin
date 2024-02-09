@@ -1,0 +1,8 @@
+# change the language of the plugin | verändern der Sprache des Plugins
+Language: german # german | english
+# Die Zeit in Sekunden(s)/Minuten(m), wann das Quiz gestoppt wird, wenn keiner eine richtige antwort schreibt
+MathQuestionExpireTime: 60s
+# Zwischen welchem Zeitpunkt (45m30s) oder Zeitraum (30m bis 40m)
+QuizTimer: 10m bis 15s
+# Minutes to start the quiz. You can use excact 5m, or 5m to 20m |
+PlayerOnlineToStart: 1 # minimum players online to start quiz timer

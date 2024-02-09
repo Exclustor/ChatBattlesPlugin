@@ -1,0 +1,7 @@
+name: ChatQuizBattles
+version: '1.0'
+main: de.levin.chatquizbattles.ChatQuizBattles
+api-version: 1.18
+commands:
+  quiz:
+    usage: "quiz help"
