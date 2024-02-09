@@ -1,0 +1,124 @@
+# messages_english.yml
+
+# Global prefix setting for all messages
+Prefix: "&dPuzzle &8» &7"
+
+# Configuration for mathematical puzzles
+Math:
+  Plus:
+    # Message for addition
+    message:
+      - "%prefix% &8&m+----------&r &eQuick Calculation &8&m----------+"
+      - "%prefix%"
+      - "%prefix% §fWhat is §3 %A% §a+ §3%B%§f?"
+      - "%prefix% The first one gets a reward"
+      - "%prefix%"
+      - "%prefix% &8&m+-----------------------------------------+"
+    # Solution of addition
+    solution: A + B
+    # Range settings for A and B
+    rangeA: 100 to 100 # -100, -99, -98,... to 98,99,100
+    rangeB: 100 to 100
+    # Activate/deactivate the puzzle
+    active: true
+
+  Minus:
+    message:
+      - "%prefix% &8&m+----------&r &eQuick Calculation &8&m----------+"
+      - "%prefix%"
+      - "%prefix% §fWhat is §3 %A% §a- §3%B%§f?"
+      - "%prefix% The first one gets a reward"
+      - "%prefix%"
+      - "%prefix% &8&m+-----------------------------------------+"
+    solution: A - B
+    rangeA: 100 to 100
+    rangeB: 100 to 100
+    active: true
+
+  Multiply:
+    message:
+      - "%prefix% &8&m+----------&r &eQuick Calculation &8&m----------+"
+      - "%prefix%"
+      - "%prefix% §fWhat is §3 %A% §c* §3%B% §f?"
+      - "%prefix% The first one gets a reward"
+      - "%prefix%"
+      - "%prefix% &8&m+-----------------------------------------+"
+    solution: A * B
+    rangeA: 1 to 10
+    rangeB: 1 to 10
+    active: true
+
+  Divide:
+    message:
+      - "%prefix% &8&m+----------&r &eQuick Calculation &8&m----------+"
+      - "%prefix%"
+      - "%prefix% §fWhat is §3 %A% §e/ §3%B%§f?"
+      - "%prefix% The first one gets a reward"
+      - "%prefix%"
+      - "%prefix% &8&m+-----------------------------------------+"
+    solution: A / B
+    rangeA: [16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60]
+    rangeB: [2, 4]
+    active: true
+
+  SquareRoot:
+    message:
+      - "%prefix% &8&m+----------&r &eQuick Calculation &8&m----------+"
+      - "%prefix%"
+      - "%prefix% §fWhat is the §3√%A%§f?"
+      - "%prefix% The first one gets a reward"
+      - "%prefix%"
+      - "%prefix% &8&m+-----------------------------------------+"
+    solution: √A
+    rangeA: [4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]
+    active: true
+
+#    YourName:
+#      message:
+#        - "%prefix% &8&m+----------&r &eQuick Calculation &8&m----------+"
+#        - "%prefix%"
+#        - "%prefix% §fWhat is §3%A% §c* §35 - 10§f?"
+#        - "%prefix% The first one gets a reward"
+#        - "%prefix%"
+#        - "%prefix% &8&m+-----------------------------------------+"
+#      solution: A * 5 - 10 # Remember point before line
+#      rangeA: [10,20,30,40,50,60,70,80,90,100]
+#      active: true
+
+Rewards: # random reward for player
+
+  1:
+    # message to send, to the player
+    message: "%prefix% You have received %money% §eCoins §7. 1"
+    # execute command as reward
+    commands: ""
+    # give player money using Vault plugin
+    giveMoney: 20 to 60 # only works, if Vault is enabled and an economy plugin
+    # give player experience
+    giveExp: 0 # give experience to the player
+
+  2:
+    message: "%prefix% You have received 20 §eCoins §7and Two §9Iron Bars §7. 2"
+    commands:
+      - "balance add %player% 20"
+      - "give %player% iron_ingot 2"
+    giveMoney: 0
+    giveExp: 0
+
+  3:
+    message: "%prefix% You have received %exp%§axp §7. 3"
+    commands: ""
+    giveMoney: 0
+    giveExp: 40 to 100
+
+  4:
+    message: "%prefix% You have received %money% §eCoins §7and %exp%§axp §7. 4"
+    commands: "balance add %player% 20"
+    giveMoney: 100
+    giveExp: 150
+
+
+# Reward messages
+playerWonGame: "%player% has won the game."
+rewardExp: "You have received &a%exp% exp &7."
+rewardMoney: "You have received &a%money%⛃."

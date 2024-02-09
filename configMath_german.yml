@@ -1,0 +1,131 @@
+# Globale Präfix-Einstellung für alle Nachrichten
+Prefix: "&dRätsel &8» &7"
+
+# Konfiguration für mathematische Rätsel
+Math:
+  Plus:
+    # Nachricht für die Addition
+    message:
+      - "%prefix% &8&m+----------&r &eSchnelles Kopfrechnen &8&m----------+"
+      - "%prefix%"
+      - "%prefix% &fBerechne &3 %A% &a+ &3%B%&f"
+      - "%prefix% Der schnellste Spieler erhält eine Belohnung!"
+      - "%prefix%"
+      - "%prefix% &8&m+----------------------------------------------+"
+    # Lösung der Addition
+    solution: A + B
+    # Bereichseinstellungen für A und B
+    rangeA: 10 bis 100 # -100, -99, -98,... bis 98,99,100
+    rangeB: 10 bis 100
+    # Aktiviert/deaktiviert das Rätsel
+    active: true
+
+  Minus:
+    message:
+      - "%prefix% &8&m+----------&r &eSchnelles Kopfrechnen &8&m----------+"
+      - "%prefix%"
+      - "%prefix% &fBerechne &3 %A% &a- &3%B%&f"
+      - "%prefix% Der schnellste Spieler erhält eine Belohnung!"
+      - "%prefix%"
+      - "%prefix% &8&m+----------------------------------------------+"
+    solution: A - B
+    rangeA: 10 bis 100
+    rangeB: 10 bis 100
+    active: true
+
+  Multiply:
+    message:
+      - "%prefix% &8&m+----------&r &eSchnelles Kopfrechnen &8&m----------+"
+      - "%prefix%"
+      - "%prefix% &fBerechne &3 %A% &c* &3%B% &f"
+      - "%prefix% Der schnellste Spieler erhält eine Belohnung!"
+      - "%prefix%"
+      - "%prefix% &8&m+----------------------------------------------+"
+    solution: A * B
+    rangeA: 4 bis 10
+    rangeB: 4 bis 10
+    active: true
+
+  Divide:
+    message:
+      - "%prefix% &8&m+----------&r &eSchnelles Kopfrechnen &8&m----------+"
+      - "%prefix%"
+      - "%prefix% &fBerechne &3 %A% &e/ &3%B%&f"
+      - "%prefix% Der schnellste Spieler erhält eine Belohnung!"
+      - "%prefix%"
+      - "%prefix% &8&m+----------------------------------------------+"
+    solution: A / B
+    rangeA: [16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60]
+    rangeB: [2, 4]
+    active: true
+
+  SquareRoot:
+    message:
+      - "%prefix% &8&m+----------&r &eSchnelles Kopfrechnen &8&m----------+"
+      - "%prefix%"
+      - "%prefix% &fBerechne die &3√%A%&f"
+      - "%prefix% Der schnellste Spieler erhält eine Belohnung!"
+      - "%prefix%"
+      - "%prefix% &8&m+----------------------------------------------+"
+    solution: √A
+    rangeA: [4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400]
+    active: true
+
+    DeinName:
+      message:
+        - "%prefix% &8&m+----------&r &eSchnelles Kopfrechnen &8&m----------+"
+        - "%prefix%"
+        - "%prefix% &fBerechne &3%A% &c* &35 - 10&f"
+        - "%prefix% Der schnellste Spieler erhält eine Belohnung!"
+        - "%prefix%"
+        - "%prefix% &8&m+---------------------------------------------+"
+      solution: A * 5 - 10 # Denke an Punkt vor Strich
+      rangeA: [10,20,30,40,50,60,70,80,90,100]
+      active: true
+
+Rewards: # random reward for player
+
+  1:
+    # message to send, to the player
+    message: "%prefix% Du hast %money% &eCoins &7erhalten."
+    # execute command as reward
+    commands: ""
+    # give player money using Vault plugin
+    giveMoney: 20 bis 60 # only works, if Vault is enabled and a econymony plugin
+    # give player experience
+    giveExp: 0 # give experience to the player
+
+  2:
+    message: "%prefix% Du hast 20 &eCoins &7und zwei &8Eisenbarren &7erhalten."
+    commands:
+      - "balance add %player% 20"
+      - "give %player% iron_ingot 2"
+    giveMoney: 0
+    giveExp: 0
+
+  3:
+    message: "%prefix% Du hast %exp%&axp &7erhalten."
+    commands: ""
+    giveMoney: 0
+    giveExp: 40 bis 100
+
+  4:
+    message: "%prefix% Du hast %money% &eCoins &7und %exp%&axp &7erhalten."
+    commands: "eco add %player% 20"
+    giveMoney: 100
+    giveExp: 150
+
+# Belohnungsnachrichten
+playerWonGame: "%prefix %&a%player% &7hat das Rätsel gelöst!"
+
+
+# Befehlsnachrichten
+quiz_start: "%prefix% &aDas Quiz wurde gestartet§8."
+quiz_already_active: "%prefix% &cDas Quiz ist bereits aktiv, nutze /quiz stop um ein neues zu starten§8."
+quiz_stopped: "%prefix% &4Das Quiz wurde von einem Admin gestoppt§8."
+quiz_reloaded: "%prefix% &bDas Quiz Plugin wurde neu geladen§8."
+no_permission: "%prefix% &4Du bist nicht berechtigt diesen Befehl auszuführen§8."
+help:
+  - "%prefix% &8/§7quiz start &8| &aStarte das Quiz§8."
+  - "%prefix% &8/§7quiz stop &8| &cStoppe das Quiz§8."
+  - "%prefix% &8/§7quiz reload &8| &bLade das Plugin neu§8."
