@@ -1,2 +1,3 @@
 # ChatBattlesPlugin
-ChatBattlesPlugin
+
+Coming soon.
